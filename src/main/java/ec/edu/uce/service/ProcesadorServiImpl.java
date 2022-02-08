@@ -18,4 +18,28 @@ public class ProcesadorServiImpl implements IProcesadorServi {
 		this.procesadorRepo.insertraProcesador(procesador);
 	}
 
+	@Override
+	public Procesador buscarProcesadorPorMarcaJOIN(String marca) {
+		// TODO Auto-generated method stub
+		return this.procesadorRepo.buscarProcesadorPorMarcaJOIN(marca);
+	}
+
+	@Override
+	public Procesador buscarProcesadorPorMarcaLEFTJOIN(String marca) {
+		// TODO Auto-generated method stub
+		return this.procesadorRepo.buscarProcesadorPorMarcaLEFTJOIN(marca);
+	}
+
+	@Override
+	public Procesador buscarProcesadorPorMarcaRIGHTJOIN(String marca) {
+		// TODO Auto-generated method stub
+		return this.procesadorRepo.buscarProcesadorPorMarcaRIGHTJOIN(marca);
+	}
+
+	@Override
+	public Procesador buscarProcesadorPorMarcaWHERE(String marca) {
+		// TODO Auto-generated method stub
+		return this.procesadorRepo.buscarProcesadorPorMarcaWHERE(marca);
+	}
+
 }

@@ -3,6 +3,7 @@ package ec.edu.uce.modelo;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,8 +27,14 @@ public class Motor {
 	@Column(name = "moto_caballos_fuerza")
 	private String caballosFuerza;
 	
-	@OneToOne(mappedBy = "motor", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "motor", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Carro carro;
+	
+	@Override
+	public String toString() {
+		return "Motor [id=" + id + ", combustible=" + combustible + ", caballosFuerza=" + caballosFuerza + ", carro="
+				+ carro + "]";
+	}
 
 	// SET-GET
 	public Integer getId() {

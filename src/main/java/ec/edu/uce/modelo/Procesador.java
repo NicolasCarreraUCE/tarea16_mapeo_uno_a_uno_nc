@@ -3,6 +3,7 @@ package ec.edu.uce.modelo;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -26,10 +27,15 @@ public class Procesador {
 	@Column(name = "proc_nucleos")
 	private String nucleos;
 	
-	@OneToOne(mappedBy = "procesador", cascade = CascadeType.ALL)
+	@OneToOne(mappedBy = "procesador", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	private Computadora computadora;
-
 	
+	@Override
+	public String toString() {
+		return "Procesador [id=" + id + ", marca=" + marca + ", nucleos=" + nucleos + ", computadora=" + computadora
+				+ "]";
+	}
+
 	// SET-GET
 	public Integer getId() {
 		return id;
